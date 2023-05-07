@@ -127,7 +127,7 @@
         y44lPCAcTli25AdmC5xQvK7YyqyaxXuqFzYm7ZlppcvsYJwJpoiiYbDKChny9Mhqi+ISk/1IBX+774+K
         yxDXCqY4Rslioft+1B/87tZN9fcVkhojUPPsee+dULcN31ue93Xked/HEHyCS7vkzx7C0IfoWyUtfADN
         G3B+VdKMHbjYhLbHnO7ovhSUGUil4O1UvmkOWm6gYaHQW3Gfk3uIS1eT17C3D11pyV6s8O768t7+POP3
-        R+QHdNpyqNaB1qYAAAAJcEhZcwAACw8AAAsPAZL5A6UAAAAHdElNRQfnBQYWFgrO+NI9AAA06ElEQVR4
+        R+QHdNpyqNaB1qYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAAHdElNRQfnBQYWFgrO+NI9AAA06ElEQVR4
         Xu2dCbhlV1mmCRIImcgECUlIQio1j0lVigZBEEQSpgBJBUgkIUUSZRAUGWUK8zw1ICIIIjSTUzMKLYOg
         gqJgg9DQgDSTA4MoM6223d+385/b6/7nW3tc+9xzzv3f53mfqr3Wv/619z637tm19tprXycIgiAIgiAI
         giAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAI
@@ -392,6 +392,9 @@
   </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="parrotFormEllipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>201, 17</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
