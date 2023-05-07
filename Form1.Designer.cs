@@ -137,6 +137,7 @@
             // 
             this.btnRooms.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnRooms.FlatAppearance.BorderSize = 0;
+            this.btnRooms.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(22)))), ((int)(((byte)(40)))));
             this.btnRooms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRooms.Font = new System.Drawing.Font("Georgia", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRooms.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(120)))), ((int)(((byte)(141)))));
@@ -154,6 +155,7 @@
             // 
             this.btnDevices.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDevices.FlatAppearance.BorderSize = 0;
+            this.btnDevices.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(22)))), ((int)(((byte)(40)))));
             this.btnDevices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDevices.Font = new System.Drawing.Font("Georgia", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDevices.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(120)))), ((int)(((byte)(141)))));
@@ -171,6 +173,7 @@
             // 
             this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnHome.FlatAppearance.BorderSize = 0;
+            this.btnHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(22)))), ((int)(((byte)(40)))));
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Georgia", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(120)))), ((int)(((byte)(141)))));
