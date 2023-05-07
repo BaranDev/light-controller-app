@@ -14,9 +14,14 @@ namespace light_controller_app
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LightController());
+            LightController lightController = new LightController();
+            Application.EnableVisualStyles();
+            Application.Run(lightController);
+            //start with dashboard in pnlContent
+
+
+
         }
     }
 }
