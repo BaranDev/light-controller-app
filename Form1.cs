@@ -13,8 +13,12 @@ using YeelightAPI;
 
 namespace light_controller_app
 {
+    
     public partial class LightController : Form
     {
+        //Device device = new Device(DeviceLocator.DiscoverAsync().Result.ToString()); //test this feature
+        
+        
         public LightController()
         {
             InitializeComponent();

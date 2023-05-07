@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LightController));
             this.pnlMenuBar = new System.Windows.Forms.Panel();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.btnMin = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.lblCurrentMenu = new System.Windows.Forms.Label();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.pnlNav = new System.Windows.Forms.Panel();
             this.btnRooms = new System.Windows.Forms.Button();
             this.btnDevices = new System.Windows.Forms.Button();
@@ -50,10 +50,10 @@
             // pnlMenuBar
             // 
             this.pnlMenuBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(22)))), ((int)(((byte)(40)))));
+            this.pnlMenuBar.Controls.Add(this.pbLogo);
             this.pnlMenuBar.Controls.Add(this.btnMin);
             this.pnlMenuBar.Controls.Add(this.btnExit);
             this.pnlMenuBar.Controls.Add(this.lblCurrentMenu);
-            this.pnlMenuBar.Controls.Add(this.pbLogo);
             this.pnlMenuBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlMenuBar.Location = new System.Drawing.Point(0, 0);
             this.pnlMenuBar.Name = "pnlMenuBar";
@@ -61,10 +61,26 @@
             this.pnlMenuBar.TabIndex = 0;
             this.pnlMenuBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlMenuBar_MouseDown);
             // 
+            // pbLogo
+            // 
+            this.pbLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbLogo.BackgroundImage")));
+            this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbLogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbLogo.Location = new System.Drawing.Point(0, 0);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(161, 40);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLogo.TabIndex = 3;
+            this.pbLogo.TabStop = false;
+            this.pbLogo.Tag = "";
+            this.toolTip1.SetToolTip(this.pbLogo, "github.com/barandev");
+            this.pbLogo.Click += new System.EventHandler(this.pbLogo_Click);
+            // 
             // btnMin
             // 
             this.btnMin.BackgroundImage = global::light_controller_app.Properties.Resources.btnMin;
             this.btnMin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMin.FlatAppearance.BorderSize = 0;
             this.btnMin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(22)))), ((int)(((byte)(40)))));
             this.btnMin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(22)))), ((int)(((byte)(40)))));
@@ -81,6 +97,7 @@
             // 
             this.btnExit.BackgroundImage = global::light_controller_app.Properties.Resources.btnExit;
             this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(22)))), ((int)(((byte)(40)))));
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(22)))), ((int)(((byte)(40)))));
@@ -95,32 +112,16 @@
             // 
             // lblCurrentMenu
             // 
-            this.lblCurrentMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblCurrentMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblCurrentMenu.Font = new System.Drawing.Font("Konkhmer Sleokchher", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurrentMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(120)))), ((int)(((byte)(141)))));
-            this.lblCurrentMenu.Location = new System.Drawing.Point(161, 0);
+            this.lblCurrentMenu.Location = new System.Drawing.Point(0, 0);
             this.lblCurrentMenu.Name = "lblCurrentMenu";
-            this.lblCurrentMenu.Size = new System.Drawing.Size(643, 40);
+            this.lblCurrentMenu.Size = new System.Drawing.Size(804, 40);
             this.lblCurrentMenu.TabIndex = 3;
             this.lblCurrentMenu.Text = "Dashboard";
             this.lblCurrentMenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblCurrentMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblCurrentMenu_MouseDown);
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbLogo.BackgroundImage")));
-            this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbLogo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbLogo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pbLogo.Location = new System.Drawing.Point(0, 0);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(161, 40);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLogo.TabIndex = 3;
-            this.pbLogo.TabStop = false;
-            this.pbLogo.Tag = "";
-            this.toolTip1.SetToolTip(this.pbLogo, "github.com/barandev");
-            this.pbLogo.Click += new System.EventHandler(this.pbLogo_Click);
             // 
             // pnlNav
             // 
@@ -137,6 +138,7 @@
             // btnRooms
             // 
             this.btnRooms.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRooms.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRooms.FlatAppearance.BorderSize = 0;
             this.btnRooms.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(22)))), ((int)(((byte)(40)))));
             this.btnRooms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -150,11 +152,13 @@
             this.btnRooms.TabIndex = 3;
             this.btnRooms.Text = "Rooms";
             this.btnRooms.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolTip1.SetToolTip(this.btnRooms, "See the devices in a room");
             this.btnRooms.UseVisualStyleBackColor = true;
             // 
             // btnDevices
             // 
             this.btnDevices.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDevices.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDevices.FlatAppearance.BorderSize = 0;
             this.btnDevices.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(22)))), ((int)(((byte)(40)))));
             this.btnDevices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -168,11 +172,13 @@
             this.btnDevices.TabIndex = 3;
             this.btnDevices.Text = "Devices";
             this.btnDevices.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolTip1.SetToolTip(this.btnDevices, "See all the devices");
             this.btnDevices.UseVisualStyleBackColor = true;
             // 
             // btnHome
             // 
             this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(22)))), ((int)(((byte)(40)))));
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -186,6 +192,7 @@
             this.btnHome.TabIndex = 3;
             this.btnHome.Text = "Dashboard";
             this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolTip1.SetToolTip(this.btnHome, "Go to dashboard");
             this.btnHome.UseVisualStyleBackColor = true;
             // 
             // pnlContent
@@ -207,9 +214,11 @@
             this.Controls.Add(this.pnlNav);
             this.Controls.Add(this.pnlMenuBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LightController";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Light Controller";
+            this.TopMost = true;
             this.pnlMenuBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.pnlNav.ResumeLayout(false);
