@@ -62,7 +62,6 @@
             // 
             // btnMin
             // 
-            this.btnMin.BackgroundImage = global::light_controller_app.Properties.Resources.btnMin_42;
             this.btnMin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMin.FlatAppearance.BorderSize = 0;
             this.btnMin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(22)))), ((int)(((byte)(40)))));
@@ -78,7 +77,6 @@
             // 
             // btnExit
             // 
-            this.btnExit.BackgroundImage = global::light_controller_app.Properties.Resources.btnExit_41;
             this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(22)))), ((int)(((byte)(40)))));
