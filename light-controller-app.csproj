@@ -81,6 +81,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColorPicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorPicker.Designer.cs">
+      <DependentUpon>ColorPicker.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     <Compile Include="Rooms.Designer.cs">
       <DependentUpon>Rooms.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ColorPicker.resx">
+      <DependentUpon>ColorPicker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>

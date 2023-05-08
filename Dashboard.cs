@@ -44,19 +44,9 @@ namespace light_controller_app
                 Provide access to a help section, FAQs, or customer support contact information for any assistance or troubleshooting.
         
          */
-        private void btnCopyRgb_Click(object sender, EventArgs e)
-        {
-            string rgb = cyberColorPicker1.SelectedColor.R.ToString() + "," + cyberColorPicker1.SelectedColor.G.ToString() + "," + cyberColorPicker1.SelectedColor.B.ToString();
-            //copy to clipboard
-            Clipboard.SetText(rgb);
-        }
+        
 
-        private void btnCopyHex_Click(object sender, EventArgs e)
-        {
-            string hex = "#"+cyberColorPicker1.SelectedColor.Name.ToUpper();
-            //copy to clipboard
-            Clipboard.SetText(hex);
-        }
+      
 
         private void cyberColorPicker1_Load(object sender, EventArgs e)
         {
@@ -65,6 +55,28 @@ namespace light_controller_app
 
         private void parrotGradientPanel1_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void btnColorPicker_Click(object sender, EventArgs e)
+        {
+            
+            ColorPicker colorPicker = new ColorPicker();
+            colorPicker.TopLevel = false;
+            if (parrotGradientPanel1.Controls.Count == 1 || parrotGradientPanel1.Controls[1].GetType() != typeof(ColorPicker))
+            {
+                parrotGradientPanel1.Controls.Add(colorPicker);
+                colorPicker.Show();
+                
+            }
+            else
+            {
+                parrotGradientPanel1.Controls.RemoveAt(1);
+            }
+
+
+
+
 
         }
     }
