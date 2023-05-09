@@ -58,7 +58,7 @@ namespace light_controller_app
 
         }
 
-        private void btnColorPicker_Click(object sender, EventArgs e)
+        private void btnColorPicker_Click(object sender, EventArgs e) // change this to tools button
         {
             
             ColorPicker colorPicker = new ColorPicker();
