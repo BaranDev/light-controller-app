@@ -35,7 +35,11 @@
             this.deviceListBox = new System.Windows.Forms.ListBox();
             this.btnOn = new System.Windows.Forms.Button();
             this.btnOff = new System.Windows.Forms.Button();
+            this.pnlDeviceStatus = new System.Windows.Forms.Panel();
+            this.lblDeviceStatus = new System.Windows.Forms.Label();
+            this.lblStatusText = new System.Windows.Forms.Label();
             this.parrotGradientPanel1.SuspendLayout();
+            this.pnlDeviceStatus.SuspendLayout();
             this.SuspendLayout();
             // 
             // parrotGradientPanel1
@@ -117,9 +121,10 @@
             this.btnOn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOn.Font = new System.Drawing.Font("Georgia", 7.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnOn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(47)))), ((int)(((byte)(62)))));
-            this.btnOn.Location = new System.Drawing.Point(222, 305);
+            this.btnOn.Location = new System.Drawing.Point(216, 289);
+            this.btnOn.MaximumSize = new System.Drawing.Size(100, 50);
             this.btnOn.Name = "btnOn";
-            this.btnOn.Size = new System.Drawing.Size(75, 23);
+            this.btnOn.Size = new System.Drawing.Size(80, 50);
             this.btnOn.TabIndex = 6;
             this.btnOn.Text = "TURN ON";
             this.btnOn.UseVisualStyleBackColor = true;
@@ -131,13 +136,46 @@
             this.btnOff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOff.Font = new System.Drawing.Font("Georgia", 7.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnOff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(47)))), ((int)(((byte)(62)))));
-            this.btnOff.Location = new System.Drawing.Point(328, 305);
+            this.btnOff.Location = new System.Drawing.Point(336, 289);
             this.btnOff.Name = "btnOff";
-            this.btnOff.Size = new System.Drawing.Size(75, 23);
+            this.btnOff.Size = new System.Drawing.Size(80, 50);
             this.btnOff.TabIndex = 6;
             this.btnOff.Text = "TURN OFF";
             this.btnOff.UseVisualStyleBackColor = true;
             this.btnOff.Click += new System.EventHandler(this.btnOff_Click);
+            // 
+            // pnlDeviceStatus
+            // 
+            this.pnlDeviceStatus.Controls.Add(this.lblDeviceStatus);
+            this.pnlDeviceStatus.Controls.Add(this.lblStatusText);
+            this.pnlDeviceStatus.Location = new System.Drawing.Point(296, 289);
+            this.pnlDeviceStatus.Name = "pnlDeviceStatus";
+            this.pnlDeviceStatus.Size = new System.Drawing.Size(40, 50);
+            this.pnlDeviceStatus.TabIndex = 7;
+            // 
+            // lblDeviceStatus
+            // 
+            this.lblDeviceStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDeviceStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(162)));
+            this.lblDeviceStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(47)))), ((int)(((byte)(62)))));
+            this.lblDeviceStatus.Location = new System.Drawing.Point(0, 13);
+            this.lblDeviceStatus.Name = "lblDeviceStatus";
+            this.lblDeviceStatus.Size = new System.Drawing.Size(40, 37);
+            this.lblDeviceStatus.TabIndex = 9;
+            this.lblDeviceStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDeviceStatus.TextChanged += new System.EventHandler(this.lblDeviceStatus_TextChanged);
+            // 
+            // lblStatusText
+            // 
+            this.lblStatusText.AutoSize = true;
+            this.lblStatusText.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblStatusText.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblStatusText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(47)))), ((int)(((byte)(62)))));
+            this.lblStatusText.Location = new System.Drawing.Point(0, 0);
+            this.lblStatusText.Name = "lblStatusText";
+            this.lblStatusText.Size = new System.Drawing.Size(43, 13);
+            this.lblStatusText.TabIndex = 8;
+            this.lblStatusText.Text = "Status";
             // 
             // Devices
             // 
@@ -145,6 +183,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(804, 340);
+            this.Controls.Add(this.pnlDeviceStatus);
             this.Controls.Add(this.btnOff);
             this.Controls.Add(this.btnOn);
             this.Controls.Add(this.deviceListBox);
@@ -158,6 +197,8 @@
             this.Text = "Devices";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Devices_FormClosing);
             this.parrotGradientPanel1.ResumeLayout(false);
+            this.pnlDeviceStatus.ResumeLayout(false);
+            this.pnlDeviceStatus.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -171,5 +212,8 @@
         private System.Windows.Forms.ListBox deviceListBox;
         private System.Windows.Forms.Button btnOn;
         private System.Windows.Forms.Button btnOff;
+        private System.Windows.Forms.Panel pnlDeviceStatus;
+        private System.Windows.Forms.Label lblStatusText;
+        private System.Windows.Forms.Label lblDeviceStatus;
     }
 }

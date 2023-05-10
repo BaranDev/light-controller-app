@@ -1,11 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Xml.Serialization;
+using Xamarin.Forms;
 using YeelightAPI.Models;
 
 namespace YeelightAPI
 {
+   
     public class DeviceEqualityComparer : IEqualityComparer<Device>
     {
         public bool Equals(Device x, Device y)

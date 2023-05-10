@@ -5,10 +5,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ReaLTaiizor.Extension;
 using YeelightAPI;
+using YeelightAPI.Models;
 
 namespace light_controller_app
 {
@@ -17,7 +20,7 @@ namespace light_controller_app
         private StorageController storageController = new StorageController("devices.xml");
         private List<Device> deviceList = new List<Device>();
         private List<DeviceModel> deviceModelList = new List<DeviceModel>();
-       
+
         public Devices()
         {
             InitializeComponent();
@@ -44,7 +47,9 @@ namespace light_controller_app
             foreach (DeviceModel deviceModel in deviceModelList)
             {
                 deviceListBox.Items.Add(deviceModel.Hostname);
-            };
+            }
+
+            ;
         }
 
 
@@ -68,14 +73,16 @@ namespace light_controller_app
             catch (DeviceDiscoveryException ex)
             {
                 // Handle any exceptions that occur during device discovery
-                MessageBox.Show($"Error discovering devices: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error discovering devices: {ex.Message}", "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
+
         private void EnterLoadingPhase(string AnimationLocation, Control control)
         {
             LoadingForm loadingForm = new LoadingForm();
             loadingForm.TopLevel = false;
-            loadingForm.StartPosition = FormStartPosition.CenterParent;
+            loadingForm.StartPosition = FormStartPosition.Manual;
 
             if (control is ListBox || control is MetroListBox)
             {
@@ -104,6 +111,7 @@ namespace light_controller_app
                     int y = control.Top + (control.Height - loadingForm.Height) / 2;
                     loadingForm.Location = new Point(x, y);
                 }
+
                 control.Controls.Add(loadingForm);
                 loadingForm.Show();
             }
@@ -121,6 +129,7 @@ namespace light_controller_app
             {
                 deviceListBox.Controls.Remove(control1);
             }
+
             foreach (Control control1 in control.Controls.OfType<System.Windows.Forms.Panel>().ToList())
             {
                 deviceListBox.Controls.Remove(control1);
@@ -140,7 +149,7 @@ namespace light_controller_app
             _SaveDevices();
 
             //Load the devices
-             _LoadDevices();
+            _LoadDevices();
         }
 
 
@@ -151,26 +160,62 @@ namespace light_controller_app
 
         private void btnLoadDevices_Click(object sender, EventArgs e)
         {
-          
+
             _LoadDevices();
         }
+
         public Device SelectedDevice;
-        private void deviceListBox_SelectedIndexChanged(object sender, EventArgs e)
+        public bool DeviceState;
+
+        private async void deviceListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //selected items text
+            // Selected item's text
             string selectedDevice = deviceListBox.GetItemText(deviceListBox.SelectedItem);
             SelectedDevice = new Device(selectedDevice);
-            SelectedDevice.Connect();
+            await SelectedDevice.Connect();
+            await UpdateState();
         }
 
-        private void btnOn_Click(object sender, EventArgs e)
+        private async Task UpdateState()
         {
-            SelectedDevice.TurnOn().Wait();
+            await IsDeviceOn();
+            lblDeviceStatus.Text = DeviceState ? "ON" : "OFF";
         }
 
-        private void btnOff_Click(object sender, EventArgs e)
+        private async Task IsDeviceOn()
         {
-            SelectedDevice.TurnOff().Wait();
+            // Get the power state as an object
+            object powerStateObject = await SelectedDevice.GetProp(PROPERTIES.power);
+            // Check if the power state is "1" (on)
+            bool isDeviceOn = powerStateObject?.ToString() == "on";
+            // Set the label text based on the device status
+            DeviceState = isDeviceOn ? true : false;
+
+        }
+
+
+        private async void btnOn_Click(object sender, EventArgs e)
+        {
+            SelectedDevice.TurnOn();
+            await UpdateState();
+        }
+
+        private async void btnOff_Click(object sender, EventArgs e)
+        {
+            SelectedDevice.TurnOff();
+            await UpdateState();
+        }
+
+        private void lblDeviceStatus_TextChanged(object sender, EventArgs e)
+        {
+            if (lblDeviceStatus.Text == "ON")
+            {
+                lblDeviceStatus.ForeColor = Color.FromArgb(0, 47, 56);
+            }
+            else if (lblDeviceStatus.Text == "OFF")
+            {
+                lblDeviceStatus.ForeColor = Color.FromArgb(58, 35, 0);
+            }
         }
     }
 }
